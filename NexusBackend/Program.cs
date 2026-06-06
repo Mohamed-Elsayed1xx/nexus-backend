@@ -69,7 +69,7 @@ builder.Services.AddAuthentication(options =>
 {
     options.ClientId = builder.Configuration["GoogleAuth:ClientId"]!;
     options.ClientSecret = builder.Configuration["GoogleAuth:ClientSecret"]!;
-    options.CallbackPath = "/api/auth/google/callback";
+    options.CallbackPath = "/signin-google";
 });
 
 // CORS
