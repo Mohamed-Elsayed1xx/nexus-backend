@@ -75,6 +75,6 @@ public class AuthController : ControllerBase
         var user = await _authService.FindOrCreateGoogleUserAsync(email, name ?? email);
         var tokens = await _authService.GenerateTokensForUserAsync(user);
 
-        return Redirect($"https://nexus-frontend.t9am-w0rk.workers.dev/auth/callback?accessToken={tokens.AccessToken}&refreshToken={tokens.RefreshToken}");
+        return Redirect($"https://nexus-frontend.t9am-w0rk.workers.dev/login?accessToken={tokens.AccessToken}&refreshToken={tokens.RefreshToken}");
     }
 }
